@@ -1,0 +1,43 @@
+.landing-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .logo img {
+    max-width: 100%; /* Responsive width */
+    height: auto;
+    max-height: 150px; /* Limit the height */
+    margin-bottom: 20px; /* Space below the logo */
+  }
+  
+  .heading h1 {
+    font-size: 24px; /* Size of the heading */
+    color: #333; /* Text color */
+    margin: 0;
+  }
+  
+  .get-started-container {
+    margin-top: 20px; /* Space above the button */
+  }
+  
+  .get-started-button {
+    background-color: #f47735; /* Main color for the button */
+    color: white; /* White text color */
+    border: none;
+    padding: 15px 30px; /* Increased padding for larger button */
+    font-size: 1rem;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: auto; /* Ensure width is based on content and padding */
+  }
+  
+  .get-started-button:hover {
+    background-color: #e65e00; /* Darker shade on hover */
+  }

@@ -1,0 +1,19 @@
+<div class="verification-container">
+    <div class="verification-form">
+      <form (ngSubmit)="processWithOCR()">
+        <h2>Upload Certificate</h2>
+        <div class="form-group">
+          <input type="file" id="file" (change)="onFileSelected($event)" required>
+          <div *ngIf="filePreviewUrl">
+            <img [src]="filePreviewUrl" alt="File Preview" class="file-preview" />
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div *ngIf="extractedText">
+        <h3>Extracted Text</h3>
+        <p>{{ extractedText }}</p>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,23 @@
+.mat-toolbar-sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f47735; /* Set navbar background color */
+    padding: 10px; /* Optional: Add padding for better spacing */
+  }
+  
+  .navbar-logo {
+    height: 30px; /* Set the height of the logo to a smaller size */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Optional: Adjust space around the logo */
+    vertical-align: middle; /* Align logo vertically in the middle of the toolbar */
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .login-button {
+    color: white; /* Ensure button text color contrasts with background */
+  }
+  
