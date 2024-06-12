@@ -10,7 +10,7 @@ const storage = multer.memoryStorage(); // Store files in memory
 const upload = multer({ storage: storage });
 
 const OCR_API_URL = 'https://hack24-verify.cognitiveservices.azure.com/vision/v3.2/ocr?detectOrientation=true';
-const OCR_API_KEY = '0f71a4bcc8ce4386932537eef3d023c0'; // Replace with your actual Azure API key
+const OCR_API_KEY = 'dcadc12c28d74ddea2e86826907b0c0b'; // Replace with your actual Azure API key
 
 app.post('/analyze', upload.single('file'), async (req, res) => {
   if (!req.file) {
