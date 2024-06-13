@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { VerifyFormComponent } from './components/verify-form/verify-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ResultDialogComponent } from './components/result-dialog/result-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     NavbarComponent,
     FooterComponent,
     LandingPageComponent,
-    LandingPageComponent 
+    VerifyFormComponent,
+    ResultDialogComponent,
+    ResultDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,10 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule 
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule 
   ],
   providers: [
     provideClientHydration(),
