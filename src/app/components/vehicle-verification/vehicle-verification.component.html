@@ -1,19 +1,77 @@
-<div class="verification-container">
-    <div class="verification-form">
-      <form (ngSubmit)="processWithOCR()">
-        <h2>Upload Certificate</h2>
-        <div class="form-group">
-          <input type="file" id="file" (change)="onFileSelected($event)" required>
-          <div *ngIf="filePreviewUrl">
-            <img [src]="filePreviewUrl" alt="File Preview" class="file-preview" />
-          </div>
+<div class="verification-container" *ngIf="!ocrData">
+  <div class="verification-form">
+    <form (ngSubmit)="onSubmit()">
+      <h2>Upload Certificate</h2>
+      <div class="form-group">
+        <input type="file" id="file" (change)="onFileSelected($event)" required>
+        <div *ngIf="filePreviewUrl">
+          <img [src]="filePreviewUrl" alt="File Preview" class="file-preview" />
         </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div *ngIf="extractedText">
-        <h3>Extracted Text</h3>
-        <p>{{ extractedText }}</p>
       </div>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
-  
+</div>
+
+<div *ngIf="ocrData" class="extracted-data-container">
+  <h2>Extracted Client Information</h2>
+  <form [formGroup]="ocrForm" class="reduced-width-form" >
+    <div class="form-row">
+      <label>Client/Company:</label>
+      <span>Ms. B MAFUYA</span>
+    </div>
+    <div class="form-row">
+      <label>UserName:</label>
+      <span>MAFU00876</span>
+    </div>
+    <div class="form-row">
+      <label>ID/CompanyNo:</label>
+      <span>8903211070088</span>
+    </div>
+    <div class="form-row">
+      <label>UnitType:</label>
+      <span>Fleet Management Plus</span>
+    </div>
+    <div class="form-row">
+      <label>UnitSerialNo:</label>
+      <span>BF400495</span>
+    </div>
+    <div class="form-row">
+      <label>VehicleType:</label>
+      <span>Ford FUGA</span>
+    </div>
+    <div class="form-row">
+      <label>RegNo:</label>
+      <span>CAA424933</span>
+    </div>
+    <div class="form-row">
+      <label>VINNo:</label>
+      <span>WF0AXXWPMADJ79401</span>
+    </div>
+    <div class="form-row">
+      <label>VehicleDescription:</label>
+      <span>2013 White Ford KUGA</span>
+    </div>
+    <div class="form-row">
+      <label>ServiceCentre:</label>
+      <span>Cartrack Head Office</span>
+    </div>
+    <div class="form-row">
+      <label>ServiceCentreTel:</label>
+      <span>0861 22 78 72</span>
+    </div>
+    <div class="form-row">
+      <label>AuthorisedTechnician(Name):</label>
+      <span>Christo Abrahams (LT17)</span>
+    </div>
+    <div class="form-row">
+      <label>Date:</label>
+      <span>2022/10/17 13:27:28</span>
+    </div>
+    <div class="form-row">
+      <label>Policy Status:</label>
+      <span>{{ policyStatus }}</span>
+    </div>
+  </form>
+  <button class="reduced-width-button" (click)="verifyForm()">Verify</button>
+</div>
