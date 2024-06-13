@@ -8,9 +8,15 @@
       <span class="example-spacer"></span>
   
       <!-- Login and Vehicle Verification buttons -->
-      <button mat-button routerLink="/login" class="login-button">
-        <mat-icon>account_circle</mat-icon>
-        Login
-      </button>
+      <div class="auth-buttons">
+        <button mat-button routerLink="/login" class="login-button" *ngIf="!isLoggedIn" (click)="login()">
+          <mat-icon>account_circle</mat-icon>
+          Login
+        </button>
+        <button mat-button routerLink="/" class="logout-button" *ngIf="isLoggedIn" (click)="logout()">
+          <mat-icon>login</mat-icon>
+          Logout
+        </button>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
